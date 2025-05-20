@@ -1,0 +1,103 @@
+@font-face{font-family: minecraft; src: url("src/MinecraftRegular-Bmg3.otf")}
+
+/* ____________________________________CLOCK PROJECT _________________________________________*/
+
+*, 
+*:before, 
+*:after{
+    padding: 0;
+    margin: 1;
+    box-sizing: border-box;
+}
+/*after putting this, the clocker's border was tight in the corner, no space between*/
+
+.clocks-background{
+    background: linear-gradient(135deg, rgb(221, 88, 88), rgb(197, 109, 197));
+
+}
+
+.clock{
+    width: 550px;
+    height: 150px;
+    
+    position: absolute; /* with just this, the background dissapeared*/
+    transform: translate(-50%, -50%); /* descaled the box by half */
+    top: 50%;
+    left: 50%; /* now back to full size and in center of screen*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*centered the light purple colouring */
+}
+
+.clock div{
+    position: relative;
+    background-color: rgb(232, 191, 232);
+    height: 100%; /* stretch the light purple background \/\/ */
+    width: 150px;
+    display: flex;
+    align-items: center; /* aligned the numbers*/
+    justify-content: center; /* justify content not items, didn't work*/
+    font-family: 'Open Sans', sans-serif;
+    font-size: 60px;
+    color: rgb(97, 42, 192);
+    border: 6px double blue;
+    border-radius: 6px;
+    box-shadow: 0px 15px 30px rgba(0,0,0,0.3);
+
+}
+
+.clock span{
+    font-weight: bolder;
+    font-size: 60px;
+    color: black;
+}
+
+/* ___________________________________TORCH/FLASHLIGHT PAGE PROJECT _____________________________*/
+
+.minecraft-words {
+    font-family: minecraft;
+    color: black;
+    font-size: 24px;
+}
+
+
+/* __________________________________NAVIGATION_______________________________________ */
+
+.nav {
+    overflow: hidden;
+    background-color: rgb(36, 11, 53);
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.nav a{
+    float: left;
+    display: block;
+    color: #ffffff;
+    text-shadow: 1px 1px #f91671;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav a:hover{
+    background-color: black;
+}
+
+
+/* ____________________________________MY OWN ___________________________________________*/
+h1{
+    font-size: 40px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.little{
+    color: white;
+    font-size: 20px;
+    
+}
