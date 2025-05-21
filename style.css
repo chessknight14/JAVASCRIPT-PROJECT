@@ -53,6 +53,9 @@
 }
 
 /* ___________________________________TORCH/FLASHLIGHT PAGE PROJECT _____________________________*/
+.nothing1{
+    color: red;
+}
 
 .minecraft-body{
     cursor: none;
@@ -67,6 +70,7 @@
     text-align: justify;
 }
 
+
 #flashlight {
     --Xpos: 50vw;
     --Ypos: 50vh;
@@ -78,9 +82,9 @@
     content: "";
     display: block;
     width: 100%;
-    min-height: 1200px;
+    min-height: 1200px; /* still issues with this  */
     position: absolute;
-    pointer-events: none;
+    pointer-events: none; /* need this here so you can leave page! */
     background: radial-gradient(
         circle 9em at var(--Xpos) var(--Ypos),
         rgba(0,0,0,0),
@@ -89,13 +93,10 @@
     
 }
 /*it's not working*/
-/*nevermind it work, there was a space beween var and (--Ypos) */
-
-/* still wont work*/
-
-
+/*nevermind it works, there was a space beween var and (--Ypos) */
 /*something is still wrong*/
 
+/*okay nowwwwww it works*, next error was in js*/
 
 @media screen and (min-width: 800px){
     body{
@@ -103,13 +104,7 @@
     }
 }
 
-
-/*test?*/
-
-#whynotwork{
-    background-color: black;
-
-}
+/*________________________________       ____________ */
 
 /* __________________________________NAVIGATION_______________________________________ */
 
