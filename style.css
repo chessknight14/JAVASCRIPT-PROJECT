@@ -54,12 +54,62 @@
 
 /* ___________________________________TORCH/FLASHLIGHT PAGE PROJECT _____________________________*/
 
+.minecraft-body{
+    cursor: none;
+
+}
+
 .minecraft-words {
     font-family: minecraft;
     color: black;
     font-size: 24px;
+    padding: 8px;
+    text-align: justify;
 }
 
+#flashlight {
+    --Xpos: 50vw;
+    --Ypos: 50vh;
+    
+    /*i don't know :( the radius ball?*/
+}
+
+#flashlight:before{
+    content: "";
+    display: block;
+    width: 100%;
+    min-height: 1200px;
+    position: absolute;
+    pointer-events: none;
+    background: radial-gradient(
+        circle 9em at var(--Xpos) var(--Ypos),
+        rgba(0,0,0,0),
+        rgba(0,0,0,1)
+    );
+    
+}
+/*it's not working*/
+/*nevermind it work, there was a space beween var and (--Ypos) */
+
+/* still wont work*/
+
+
+/*something is still wrong*/
+
+
+@media screen and (min-width: 800px){
+    body{
+        font-size: 24px;
+    }
+}
+
+
+/*test?*/
+
+#whynotwork{
+    background-color: black;
+
+}
 
 /* __________________________________NAVIGATION_______________________________________ */
 
