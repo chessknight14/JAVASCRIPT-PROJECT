@@ -28,8 +28,7 @@ var clock = setInterval(
     }, 1000
 );
 
-//____________________________________FLASHLIGHT FUNCTIONS
-
+//____________________________________FLASHLIGHT FUNCTIONS____________________________________
 
 let mouseX = 0;
 let mouseY = 0;
@@ -54,8 +53,17 @@ function getMousePosition(e) {
     flashlight.style.setProperty("--Ypos", mouseY + "px"); //ohhhhhh
 }
 
-document.addEventListener("mousemove", getMousePosition);
+document.addEventListener("mousemove", getMousePosition); //to follow the mouse i think
 document.addEventListener("touchmove", getMousePosition);
 
 
 // hold ctrl and press dash 
+
+// window.alert("This is not a drill");
+
+
+//____________________________________OTHER FUNCTIONS____________________________________
+
+
+
+
