@@ -1,4 +1,5 @@
 @font-face{font-family: minecraft; src: url("src/MinecraftRegular-Bmg3.otf")}
+@font-face{font-family: monty; src: url("src/Mont-HeavyDEMO.otf")}
 
 /* ____________________________________CLOCK PROJECT _________________________________________*/
 
@@ -12,7 +13,7 @@
 /*after putting this, the clocker's border was tight in the corner, no space between*/
 
 .clocks-background{
-    background: linear-gradient(135deg, rgb(221, 88, 88), rgb(197, 109, 197));
+    background: linear-gradient(135deg, rgb(221, 88, 88), rgb(197, 109, 197)); /*gradient background*/
 
 }
 
@@ -104,7 +105,78 @@
     }
 }
 
-/*________________________________       ____________ */
+
+/*________________________________________  FILE UPLOAD PROJECT___________ ____________ */
+
+.upload-body{
+    /* 275 is smooth */
+    /* background-color: rgb(212, 201, 243); */
+    /* background: linear-gradient(180deg, rgb(198, 245, 213), rgb(243, 188, 243)); (pretty!) */
+    background: linear-gradient(275deg, rgb(198, 245, 213), rgb(243, 188, 243));
+}
+
+
+.Ucontainer{
+    background-color: rgb(231, 231, 231);
+    width: 80%;
+    max-width: 34.37em; /*idk*/
+    position: relative;
+    margin: 3.12em auto; /* it's centered though*/
+    padding: 3.12em 1.25em;
+    border-radius: 0.50em; /*corner around the box*/
+    box-shadow: 0 1.25em 2.15em rgba(228, 75, 177, 0.3);
+
+}
+
+input[type="file"]{
+    display: none;
+}
+
+label{
+    display: block;
+    position: relative;
+    background-color: rgb(185, 185, 185);
+    font-size: 1.2em;
+    font-family: monty;
+    text-align: center;
+    color: white;
+    width: 16em;
+    padding: 1.12em 0;
+    margin: auto;
+    border-radius: 0.30em;
+    cursor: pointer;
+    
+}
+
+#file-num{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1.25em 0 1.80em 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.Ucontainer li{ /* for each individual li, cool */
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color:rgb(97, 42, 192);
+    margin-bottom: 1em;
+    padding: 1em 1em;
+    border-radius: 0.3em;
+    display: flex; /* idk check it out later, made the box smaller*/
+    justify-content: space-between; /* idk, made it smaller? and larger? */
+}
+
+
+/* probably only use px for font an headers and em for everything else  */
+
+
+/* __________________________________NEW _______________________________________ */
+
+
+
 
 /* __________________________________NAVIGATION_______________________________________ */
 

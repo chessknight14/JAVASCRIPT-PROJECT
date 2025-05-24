@@ -9,21 +9,33 @@
     <script src="script.js" defer></script>
 
 </head>
-<body>
+<body class="upload-body">
 
             <div class="nav">
             
             <a href="index.html">CLOCK</a>
             <a href="torch.html">TORCH</a>
-            <a href="intro.html">OTHER</a>
+            <a href="upload.html">UPLOAD</a>
             <a href="writings.html">OTHER</a>
             <a href="webdev.html">OTHER</a>
             <a href="other.html">OTHER</a>
 
         </div>
 
-    
-    <h1> fallen</h1>
+    <h1> Files Uploader</h1>
+
+
+    <div class="Ucontainer">
+        <input type="file" id="file-input" multiple>
+        <label for="file-input"> 
+            <img src="src/upload_icon.png" style="padding-left: 4px; padding-top: 4px;">
+            &nbsp; Choose file(s)
+        
+        </label>
+        <ul id="files-list"> </ul>
+        <div id="file-num"> No Files Choosen </div>
+
+    </div>
 
     
 </body>
