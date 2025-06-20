@@ -6,8 +6,19 @@ canvas.width = 600;
 canvas.height = 400;
 
 
-
 let score = 0;
+
+var circle = {
+    x: 150,
+    y: 100,
+    r: 9
+};
+var rect = {
+    x: 100,
+    y: 100,
+    w: 40,
+    h: 40
+};
 
 
 
@@ -33,33 +44,79 @@ function drawScore(){
 drawScore();
 
 
+function RectCircleColliding(circle, rect) {
+    var distX = Math.abs(circle.x - rect.x - rect.w / 2);
+    var distY = Math.abs(circle.y - rect.y - rect.h / 2);
 
+    if (distX > (rect.w / 2 + circle.r)) {
+        return false;
+    }
+    if (distY > (rect.h / 2 + circle.r)) {
+        return false;
+    }
 
+    if (distX <= (rect.w / 2)) {
+        return true;
+    }
+    if (distY <= (rect.h / 2)) {
+        return true;
+    }
 
-
-
+    var dx = distX - rect.w / 2;
+    var dy = distY - rect.h / 2;
+    return (dx * dx + dy * dy <= (circle.r * circle.r));
+	
+}
 
 
 
 //        CLASSES
 
-class Player{
-	
-	constructor(){
+
+
+class Obs{
+	constructor(x, y, wd, ht){
+		this.position = {x, y}
+		this.width = wd;
+		this.height = ht;
 		
-		this.position = {x: 300, y: 200}
-		this.width = 9;
-		this.height = 9;
-		this.velocity = {x: 0, y: 0}
+		// this.movement = {x: 0, y: 0}
+	}
+
+	draw(){
+		c.fillStyle = '#5c76c4';
+		c.fillRect(this.position.x, this.position.y, this.width, this.height);
+	}
+
+
+	update(){
+		this.draw();
+
+	}
+
+}
+
+class Player{
+
+	constructor(x, y, r){
+
+		this.position = {x, y};
+		this.radius = r;
+
+		this.velocity = {x,y};
+	
 	}
 	
 	draw(){ //draw ze person guy
 		c.beginPath();
-		c.arc(this.position.x, this.position.y, 9, 0, 2 * Math.PI);
+		c.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI);
 		c.fillStyle = '#6ecc90';
 		c.fill();
 		
 	}
+
+
+
 	
 	update(){ //update peron's draw and physics
 		const speed = 5;
@@ -93,13 +150,20 @@ class Player{
 
 
 
+	// constructor(x, y, wd, ht){
+const ob = new Obs(rect.x, rect.y, rect.w, rect.h);
+
+
+
+// constructor(x, y, r){
+const guy = new Player(circle.x, circle.y, circle.r);
+
+// collision?
 
 
 
 
 
-
-const guy = new Player();
 
 
 //___________________________KEYS?________________________
@@ -125,17 +189,21 @@ const keys = {
 
 //________________________________________-___GAME LOOP  _________________-__________
 
-function render(){   //ctrl+ ]
+function render(){   //ctrl+ ] for indent all
 	requestAnimationFrame(render);
 	c.clearRect(0,0, canvas.width, canvas.height); 
 	//draw/update everything \/
 	bg();
+	
+
+	ob.update();
+
+
     guy.update();
+	
+
+
 	drawScore();
-
-
-
-
 }
 
 render();
@@ -152,16 +220,16 @@ document.addEventListener("keyup", event => {  ///actually works
 
 	switch (event.key) {
 		case "ArrowDown":
-			console.log("ldowneft");
+			keys.down.pressed = false;
 			break;
 		case "ArrowUp":
-			console.log("up");
+			keys.up.pressed = false;
 			break;
 		case "ArrowLeft":
-			console.log("left");
+			keys.left.pressed = false;
 			break;
-		case "ArrowRight":
-			console.log("right");
+			case "ArrowRight":
+			keys.right.pressed = false;
 			break;
 		default:
 			return;
@@ -175,23 +243,23 @@ document.addEventListener("keyup", event => {  ///actually works
 );
 
 
-document.addEventListener("keydown", event => {  ///actually works
+document.addEventListener("keydown", event => {  
 	if (event.defaultPrevented){
 		return;
 	}
 
 	switch (event.key) {
 		case "ArrowDown":
-			console.log("leftdown");
+			keys.down.pressed = true;
 			break;
 		case "ArrowUp":
-			console.log("updown");
+			keys.up.pressed = true;
 			break;
 		case "ArrowLeft":
-			console.log("leftdown");
+			keys.left.pressed = true;
 			break;
 		case "ArrowRight":
-			console.log("rightdown");
+			keys.right.pressed = true;
 			break;
 		default:
 			return;
@@ -204,31 +272,3 @@ document.addEventListener("keydown", event => {  ///actually works
 	true  //idk
 );
 
-
-
-
-/*
-addEventListener('keyup', event =>  {
-	switch (event){
-		case 38:
-			
-			keys.up.pressed = false;
-			console.log('key up?');
-			break;
-			
-		case 40:
-			
-			keys.down.pressed = false;
-			break;
-		case 37:
-			
-			keys.left.pressed = false;
-			break;
-		
-		case 39:
-			
-			keys.right.pressed = false;
-			break;
-	}
-})
-*/
